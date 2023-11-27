@@ -1,4 +1,5 @@
 import 'package:batch_five_ui_practice/views/screens/screen_test.dart';
+import 'package:batch_five_ui_practice/views/screens/single_multi_child.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,7 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ScreenTest(),
+      // home: ScreenTest(),
+      home: SingleMultiChild(),
     );
   }
 }
