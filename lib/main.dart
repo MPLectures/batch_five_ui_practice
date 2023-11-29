@@ -1,7 +1,6 @@
-import 'package:batch_five_ui_practice/views/screens/screen_test.dart';
-import 'package:batch_five_ui_practice/views/screens/single_multi_child.dart';
+import 'package:batch_five_ui_practice/views/screens/changing_images.dart';
+import 'package:batch_five_ui_practice/views/screens/states_of_widget.dart';
 import 'package:flutter/material.dart';
-
 
 void main() => runApp(MyApp());
 
@@ -11,9 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: ScreenTest(),
-      home: SingleMultiChild(),
+      home: ChangingImages(),
     );
   }
 }
-
-
