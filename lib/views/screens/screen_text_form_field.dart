@@ -22,6 +22,7 @@ class _TextFormFieldScreenState extends State<TextFormFieldScreen> {
             Text(
               input,
               style: TextStyle(
+                fontFamily: "RobotoT",
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
@@ -37,6 +38,11 @@ class _TextFormFieldScreenState extends State<TextFormFieldScreen> {
                 decoration: InputDecoration(
                   // counter: SizedBox(),
                   hintText: "Enter your name",
+                  hintStyle: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: "JS"
+                  ),
                   // label: Text("Name"),
                   // helperText: "Enter your name",
                   // prefix: Icon(Icons.co_present_rounded),
