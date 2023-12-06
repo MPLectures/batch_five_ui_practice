@@ -1,9 +1,19 @@
+import 'package:batch_five_ui_practice/helpers/constants.dart';
 import 'package:flutter/material.dart';
 
-class ScreenLogin extends StatelessWidget {
+class ScreenLogin extends StatefulWidget {
+  @override
+  State<ScreenLogin> createState() => _ScreenLoginState();
+}
+
+class _ScreenLoginState extends State<ScreenLogin> {
+  bool isHidden = true;
+  IconData hiddenIcon = Icons.visibility;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffffffff),
       appBar: AppBar(
         backgroundColor: Color(0xffffffff),
@@ -34,7 +44,9 @@ class ScreenLogin extends StatelessWidget {
                     ),
                   ),
                   Image.asset("assets/images/logo.png"),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Text(
                     "Welcome Back",
                     style: TextStyle(
@@ -43,7 +55,9 @@ class ScreenLogin extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   SizedBox(
                     height: 43,
                     child: TextFormField(
@@ -66,13 +80,30 @@ class ScreenLogin extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 30,
+                  ),
                   SizedBox(
                     height: 43,
                     child: TextFormField(
-                      obscureText: true,
+                      obscureText: isHidden,
                       decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.visibility),
+                        // suffixIcon: IconButton(
+                        //   onPressed: () {},
+                        //   icon: Icon(hiddenIcon),
+                        // ),
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {});
+                            isHidden = !isHidden;
+                          },
+                          child: Icon(
+                            isHidden
+                                ? hiddenIcon = Icons.visibility
+                                : hiddenIcon = Icons.visibility_off,
+                            color: Colors.grey,
+                          ),
+                        ),
                         contentPadding:
                             EdgeInsets.symmetric(horizontal: 15, vertical: 2),
                         hintText: "Password",
@@ -90,7 +121,9 @@ class ScreenLogin extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -102,12 +135,15 @@ class ScreenLogin extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40,),
+                  SizedBox(
+                    height: 40,
+                  ),
                   Container(
                     height: 43,
                     width: 250,
                     decoration: BoxDecoration(
-                      color: Color(0xffED1C24),
+                      // color: AppColors.appColor,
+                      color: AppColors.redColor,
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Center(
@@ -223,7 +259,9 @@ class ScreenLogin extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20,)
+          SizedBox(
+            height: 20,
+          )
         ],
       ),
     );
