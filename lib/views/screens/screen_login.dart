@@ -1,4 +1,5 @@
 import 'package:batch_five_ui_practice/helpers/constants.dart';
+import 'package:batch_five_ui_practice/views/screens/screen_singup.dart';
 import 'package:flutter/material.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -248,12 +249,24 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 VerticalDivider(
                   thickness: 1.5,
                 ),
-                Text(
-                  "Signup",
-                  style: TextStyle(
-                    color: Color(0xffED1C24),
-                    fontFamily: "PR",
-                    fontSize: 14,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/signup');
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => ScreenSingUp()));
+                  },
+                  child: Hero(
+                    tag: "first",
+                    child: Text(
+                      "Signup",
+                      style: TextStyle(
+                        color: Color(0xffED1C24),
+                        fontFamily: "PR",
+                        fontSize: 14,
+                      ),
+                    ),
                   ),
                 ),
               ],
